@@ -8,7 +8,7 @@
 
 class NOR : public Operators {
 public:
-
+    NOR();
 
 
 };

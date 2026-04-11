@@ -8,7 +8,7 @@
 
 class NOT : public Operators {
 public:
-
+    NOT();
 
 
 };

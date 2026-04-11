@@ -10,7 +10,7 @@
 
 class AND : public Operators {
 public:
-
+    AND();
 
 
 };

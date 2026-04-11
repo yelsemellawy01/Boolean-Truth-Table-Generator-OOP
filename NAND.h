@@ -9,7 +9,7 @@
 
 class NAND : public Operators {
 public:
-
+    NAND();
 
 
 };

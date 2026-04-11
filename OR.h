@@ -8,7 +8,7 @@
 
 class OR : public Operators {
 public:
-
+    OR();
 
 
 };

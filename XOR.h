@@ -9,6 +9,7 @@
 
 class XOR : public Operators {
 public:
+    XOR();
 
 
 
