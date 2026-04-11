@@ -1,10 +1,16 @@
+#ifndef XOR_H
+#define XOR_H
+
+
 #include <iostream>
 #include <string>
+#include "Operators.h"
 
 
-class XOR {
+class XOR : public Operators {
 public:
 
 
 
 };
+#endif

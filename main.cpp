@@ -1,5 +1,6 @@
 #include <iostream> 
 #include <string> 
+#include "Operators.h"
 
 
 
@@ -22,21 +23,27 @@ int NOT_Location = input.find("NOT");
 std::cout << "What the operators actually mean: " << std::endl; 
 if(AND_Location != std::string::npos){ 
     std::cout << "AND: True only if both inputs are true." << std::endl; 
+    Operators andObj(1);
 } 
 if(OR_Location != std::string::npos){
-    std::cout << "OR: True when 1 or more inputs are true." << std::endl; 
+    std::cout << "OR: True when 1 or more inputs are true." << std::endl;
+     Operators orObj(2);
 }
 if(NAND_Location != std::string::npos){ 
     std::cout << "NAND: False only if both inputs are true." << std::endl;
+        Operators nandObj(3);
 }
 if(XOR_Location != std::string::npos){ 
     std::cout << "XOR: True when only 1 input is true." << std::endl;
+        Operators xorObj(4);
 }
 if(NOR_Location != std::string::npos){ 
     std::cout << "NOR: False when 1 or more inputs are true." << std::endl;
+        Operators norObj(5);
 }
 if(NOT_Location != std::string::npos){ 
     std::cout << "NOT: Inverts the input." << std::endl;
+        Operators notObj(6);
 }
 
 
