@@ -40,10 +40,10 @@ if(NOT_Location != std::string::npos){
 }
 
 
-
-
-
-
-
-
+if(AND_Location == std::string::npos && OR_Location == std::string::npos && NAND_Location == std::string::npos && XOR_Location == std::string::npos && NOR_Location == std::string::npos && NOT_Location == std::string::npos){ 
+    std::cout << "No boolean operators found in the input." << std::endl; 
+}
+else{ 
+    std::cout << "Boolean operators found in the input." << std::endl; 
+}
 }
