@@ -2,6 +2,6 @@
 #include<string>
 #include "NAND.h"
 
-NAND::NAND() : Operators(1) {
+NAND::NAND() : Operators() {
     
 }

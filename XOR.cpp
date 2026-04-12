@@ -2,6 +2,6 @@
 #include<string>
 #include "XOR.h"
 
-XOR::XOR() : Operators(1) {
+XOR::XOR() : Operators() {
     
 }

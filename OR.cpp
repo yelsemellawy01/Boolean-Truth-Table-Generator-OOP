@@ -2,6 +2,6 @@
 #include<string>
 #include "OR.h"
 
-OR::OR() : Operators(2) {
+OR::OR() : Operators() {
     
 }

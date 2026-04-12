@@ -2,6 +2,6 @@
 #include<string>
 #include "NOT.h"
 
-NOT::NOT() : Operators(1) {
+NOT::NOT() : Operators() {
     
 }

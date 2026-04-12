@@ -38,7 +38,10 @@ Operators::Operators(int valueOfOperators) {
     
     
 }
+Operators::Operators() {
+    this->operatorObj = nullptr;
+}
 
 std::string Operators::getTruthTableValues() { 
-    
+    return NULL;
 }

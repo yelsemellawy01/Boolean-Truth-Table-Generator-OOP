@@ -2,6 +2,6 @@
 #include<string>
 #include "NOR.h"
 
-NOR::NOR() : Operators(1) {
+NOR::NOR() : Operators() {
     
 }
