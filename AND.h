@@ -11,7 +11,7 @@
 class AND : public Operators {
 public:
     AND();
-    std::string getTruthTableValues() override;
+    //std::string getTruthTableValues() override;
 
 };
 

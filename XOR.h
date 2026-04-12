@@ -10,7 +10,7 @@
 class XOR : public Operators {
 public:
     XOR();
-    std::string getTruthTableValues() override;
+    //std::string getTruthTableValues() override;
 
 
 
