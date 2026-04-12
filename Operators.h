@@ -15,7 +15,7 @@ class Operators {
     public:
     Operators(int valueOfOperators); //Parameterised constructor to create an operator object with the value of the operator that is being used in the input
     Operators();
-    std::string getTruthTableValues(); //Function to generate the truth table values for the operator that is being used in the input and return it as a string to be printed to the user
+    virtual std::string getTruthTableValues(); //Function to generate the truth table values for the operator that is being used in the input and return it as a string to be printed to the user
 
 
 };

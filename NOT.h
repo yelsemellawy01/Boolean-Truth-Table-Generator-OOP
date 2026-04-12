@@ -9,6 +9,7 @@
 class NOT : public Operators {
 public:
     NOT();
+    std::string getTruthTableValues() override;
 
 
 };

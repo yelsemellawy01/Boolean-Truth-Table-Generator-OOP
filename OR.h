@@ -9,6 +9,7 @@
 class OR : public Operators {
 public:
     OR();
+    std::string getTruthTableValues() override;
 
 
 };

@@ -8,7 +8,7 @@
 #include "NOR.h"
 #include "NOT.h"
 
-
+//Parameterised constructor to create OPERATORS objects and define which other operator needs to be created based on the value of the operator that is being used in the input
 Operators::Operators(int valueOfOperators) {
     this->valueOfOperators = valueOfOperators; 
     switch (valueOfOperators)
@@ -38,10 +38,15 @@ Operators::Operators(int valueOfOperators) {
     
     
 }
+//No parameter constructor cus the other operator objects will have to create an OPERATORS object without a value and without a operator object ptr
 Operators::Operators() {
-    this->operatorObj = nullptr;
+    this->valueOfOperators = 0;
+    this->operatorObj = nullptr; 
 }
 
 std::string Operators::getTruthTableValues() { 
+    
+    
+    
     return NULL;
 }
