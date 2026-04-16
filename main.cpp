@@ -17,6 +17,10 @@ std::vector<std::string> tokens; //Vector to store tokenised input string
 std::getline(std::cin, input); //Had to use getline as cin stops at whitespaces (spacebars) 
 std::string inputCopy = input; //Copy of the input string to be used for finding the operators in the input string, as the original input string will be modified to remove the operators from it and find the variables in it
 int pos; 
+// Variables will be used to determine if the input has 2 or 3 variables 
+bool hasA = false;
+bool hasB = false;
+bool hasC = false;
 while ((pos = inputCopy.find(" ")) != std::string::npos) { //Tokenise the input string by finding the spaces in it and using them to separate the variables and operators in the input 
     tokens.push_back(input.substr(0, pos)); 
     inputCopy.erase(0, pos + 1); //Remove the tokenised part of the input string to find the next token in the next loop
@@ -27,6 +31,21 @@ for(int i = 0; i < tokens.size(); i++){
     }
     if(tokens[i].back() == ')'){
         tokens[i] = tokens[i].substr(0, tokens[i].size() - 1);
+    }
+}
+//Checks for variables in the tokenized input string 
+for(int i = 0; i < tokens.size(); i++){
+    if(tokens[i] == "A"){
+        hasA = true; 
+
+    }
+    if(tokens[i] == "B"){
+        hasB = true; 
+
+    }
+    if(tokens[i] == "C"){
+        hasC = true; 
+
     }
 }
 
