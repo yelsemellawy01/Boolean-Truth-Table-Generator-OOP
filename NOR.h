@@ -9,7 +9,7 @@
 class NOR : public Operators {
 public:
     NOR();
-   // std::string getTruthTableValues() override;
+   bool getTruthTableValues(int a, int b) override;
 
 
 };
