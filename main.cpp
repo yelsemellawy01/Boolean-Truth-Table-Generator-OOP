@@ -19,7 +19,7 @@ std::string inputCopy = input; //Copy of the input string to be used for finding
 int pos; 
 while ((pos = inputCopy.find(" ")) != std::string::npos) { //Tokenise the input string by finding the spaces in it and using them to separate the variables and operators in the input 
     tokens.push_back(input.substr(0, pos)); 
-    inputCopy.erase(0, pos + 1); 
+    inputCopy.erase(0, pos + 1); //Remove the tokenised part of the input string to find the next token in the next loop
 }
 for(int i = 0; i < tokens.size(); i++){
     if (tokens[i].front() == '('){ //Remove the brackets from the variables in the input string to not cause problems with finding the operators in the string
