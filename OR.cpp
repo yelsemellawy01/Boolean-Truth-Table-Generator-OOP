@@ -5,3 +5,6 @@
 OR::OR() : Operators() {
     
 }
+bool OR::getTruthTableValues(int a, int b) {
+    return a || b; 
+}
