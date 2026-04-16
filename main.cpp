@@ -11,7 +11,7 @@
 
 
 
-int main(){ 
+int main(){
 std::string input; 
 std::vector<std::string> tokens; //Vector to store tokenised input string 
 std::getline(std::cin, input); //Had to use getline as cin stops at whitespaces (spacebars) 
@@ -94,6 +94,90 @@ if(NOT_Location != std::string::npos){
         Operators notObj(6);
 }
 
+std::cout << hasA && hasB && hasC; //Test to see if the variables are being detected 
+if(hasA && hasB && hasC){
+    for(int a = 0; a <= 1; a++){
+        for (int b = 0; b <= 1; b++){
+            for(int c = 0; c <= 1; c++){
+                int currentResult; 
+                if(tokens[0] == "A"){
+                    currentResult = a; 
+                }
+                else if(tokens[0] == "B"){
+                    currentResult = b; 
+                }
+                else if(tokens[0] == "C"){
+                    currentResult = c; 
+                }
+                for(int i = 1; i < tokens.size(); i++){
+                    int operand;
+                    if(tokens[i] == "AND"){ 
+                        if(tokens[i + 1] == "A"){
+                            operand = a; 
+                        }
+                        else if(tokens[i + 1] == "B"){
+                            operand = b; 
+                        }
+                        else if(tokens[i + 1] == "C"){
+                            operand = c; 
+                        }
+                        currentResult = AND().getTruthTableValues(currentResult, operand);
+                    }
+                    else if(tokens[i] == "OR"){
+                        if(tokens[i + 1] == "A"){
+                            operand = a; 
+                        }
+                        else if(tokens[i + 1] == "B"){
+                            operand = b; 
+                        }
+                        else if(tokens[i + 1] == "C"){
+                            operand = c; 
+                        }
+                        currentResult = OR().getTruthTableValues(currentResult, operand);
+                    }
+                    else if(tokens[i] == "NAND"){
+                        if(tokens[i + 1] == "A"){
+                            operand = a; 
+                        }
+                        else if(tokens[i + 1] == "B"){
+                            operand = b; 
+                        }
+                        else if(tokens[i + 1] == "C"){
+                            operand = c; 
+                        }
+                        currentResult = NAND().getTruthTableValues(currentResult, operand);
+                    }
+                    else if(tokens[i] == "XOR"){
+                        if(tokens[i + 1] == "A"){
+                            operand = a; 
+                        }
+                        else if(tokens[i + 1] == "B"){
+                            operand = b; 
+                        }
+                        else if(tokens[i + 1] == "C"){
+                            operand = c; 
+                        }
+                        currentResult = XOR().getTruthTableValues(currentResult, operand);
+                    }
+                    else if(tokens[i] == "NOR"){
+                        if(tokens[i + 1] == "A"){
+                            operand = a; 
+                        }
+                        else if(tokens[i + 1] == "B"){
+                            operand = b; 
+                        }
+                        else if(tokens[i + 1] == "C"){
+                            operand = c; 
+                        }
+                        currentResult = NOR().getTruthTableValues(currentResult, operand);
+                    }
+                    else if(tokens[i] == "NOT"){
+                        //dont know how to do NOT operator yet, have to somehow get it to store in another variable that then can be used 
+                }
+            }
+        }
+    }
+}
 
-
+}
 }
