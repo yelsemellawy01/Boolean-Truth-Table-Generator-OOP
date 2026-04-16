@@ -9,7 +9,7 @@
 class NOT : public Operators {
 public:
     NOT();
-    //std::string getTruthTableValues() override;
+    bool getInverse(int a); //Function to generate the truth table values for NOT operator 
 
 
 };
