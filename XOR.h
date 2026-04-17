@@ -10,7 +10,7 @@
 class XOR : public Operators {
 public:
     XOR();
-    bool getTruthTableValues(int a, int b) override;
+    int getTruthTableValues(int a, int b) override;
 
 
 

@@ -5,6 +5,6 @@
 NOT::NOT() : Operators() {
     
 }
-bool NOT::getInverse(int a) {
+int NOT::getInverse(int a) {
     return !a; 
 }

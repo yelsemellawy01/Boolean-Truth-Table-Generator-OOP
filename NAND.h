@@ -10,7 +10,7 @@
 class NAND : public Operators {
 public:
     NAND();
-    bool getTruthTableValues(int a, int b) override;
+    int getTruthTableValues(int a, int b) override;
 
 };
 

@@ -5,6 +5,6 @@
 XOR::XOR() : Operators() {
     
 }
-bool XOR::getTruthTableValues(int a, int b) {
+int XOR::getTruthTableValues(int a, int b) {
     return (a || b) && !(a && b); //Definition of XOR
 }

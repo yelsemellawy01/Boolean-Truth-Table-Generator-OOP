@@ -9,7 +9,7 @@
 class NOR : public Operators {
 public:
     NOR();
-   bool getTruthTableValues(int a, int b) override;
+   int getTruthTableValues(int a, int b) override;
 
 
 };

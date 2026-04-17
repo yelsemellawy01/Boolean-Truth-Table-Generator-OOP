@@ -11,7 +11,7 @@
 class AND : public Operators {
 public:
     AND();
-    bool getTruthTableValues(int a, int b) override;
+    int getTruthTableValues(int a, int b) override;
 
 };
 

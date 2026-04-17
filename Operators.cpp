@@ -44,7 +44,7 @@ Operators::Operators() {
     this->operatorObj = nullptr; 
 }
 
-bool Operators::getTruthTableValues(int a, int b) { 
+int Operators::getTruthTableValues(int a, int b) { 
     
     
     

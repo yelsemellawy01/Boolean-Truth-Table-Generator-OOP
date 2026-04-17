@@ -9,7 +9,7 @@
 class NOT : public Operators {
 public:
     NOT();
-    bool getInverse(int a); //Function to generate the truth table values for NOT operator 
+    int getInverse(int a); //Function to generate the truth table values for NOT operator 
 
 
 };

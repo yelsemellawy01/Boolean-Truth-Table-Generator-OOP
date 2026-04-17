@@ -9,7 +9,7 @@
 class OR : public Operators {
 public:
     OR();
-    bool getTruthTableValues(int a, int b) override;
+    int getTruthTableValues(int a, int b) override;
 
 
 };

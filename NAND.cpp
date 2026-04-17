@@ -6,6 +6,6 @@ NAND::NAND() : Operators() {
     
 }
 
-bool NAND::getTruthTableValues(int a, int b) {
+int NAND::getTruthTableValues(int a, int b) {
     return !(a && b); 
 }

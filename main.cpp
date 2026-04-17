@@ -22,9 +22,10 @@ bool hasA = false;
 bool hasB = false;
 bool hasC = false;
 while ((pos = inputCopy.find(" ")) != std::string::npos) { //Tokenise the input string by finding the spaces in it and using them to separate the variables and operators in the input 
-    tokens.push_back(input.substr(0, pos)); 
+    tokens.push_back(inputCopy.substr(0, pos)); 
     inputCopy.erase(0, pos + 1); //Remove the tokenised part of the input string to find the next token in the next loop
 }
+tokens.push_back(inputCopy); //Push the last token in the input string to the vector of tokens#
 for(int i = 0; i < tokens.size(); i++){
     if (tokens[i].front() == '('){ //Remove the brackets from the variables in the input string to not cause problems with finding the operators in the string
         tokens[i] = tokens[i].substr(1); 
@@ -94,7 +95,6 @@ if(NOT_Location != std::string::npos){
         Operators notObj(6);
 }
 
-std::cout << hasA && hasB && hasC; //Test to see if the variables are being detected 
 if(hasA && hasB && hasC){
     for(int a = 0; a <= 1; a++){
         for (int b = 0; b <= 1; b++){
@@ -122,6 +122,7 @@ if(hasA && hasB && hasC){
                             operand = c; 
                         }
                         currentResult = AND().getTruthTableValues(currentResult, operand);
+                        i++;
                     }
                     else if(tokens[i] == "OR"){
                         if(tokens[i + 1] == "A"){
@@ -134,6 +135,7 @@ if(hasA && hasB && hasC){
                             operand = c; 
                         }
                         currentResult = OR().getTruthTableValues(currentResult, operand);
+                        i++;
                     }
                     else if(tokens[i] == "NAND"){
                         if(tokens[i + 1] == "A"){
@@ -146,6 +148,7 @@ if(hasA && hasB && hasC){
                             operand = c; 
                         }
                         currentResult = NAND().getTruthTableValues(currentResult, operand);
+                        i++;
                     }
                     else if(tokens[i] == "XOR"){
                         if(tokens[i + 1] == "A"){
@@ -158,6 +161,7 @@ if(hasA && hasB && hasC){
                             operand = c; 
                         }
                         currentResult = XOR().getTruthTableValues(currentResult, operand);
+                        i++;
                     }
                     else if(tokens[i] == "NOR"){
                         if(tokens[i + 1] == "A"){
@@ -170,14 +174,17 @@ if(hasA && hasB && hasC){
                             operand = c; 
                         }
                         currentResult = NOR().getTruthTableValues(currentResult, operand);
+                        i++;
                     }
                     else if(tokens[i] == "NOT"){
                         //dont know how to do NOT operator yet, have to somehow get it to store in another variable that then can be used 
                 }
+                std::cout << "A: " << a << " B: " << b << " C: " << c << " Result: " << currentResult << std::endl;
             }
         }
     }
 }
 
 }
+
 }

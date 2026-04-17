@@ -5,6 +5,6 @@
 OR::OR() : Operators() {
     
 }
-bool OR::getTruthTableValues(int a, int b) {
+int OR::getTruthTableValues(int a, int b) {
     return a || b; 
 }
