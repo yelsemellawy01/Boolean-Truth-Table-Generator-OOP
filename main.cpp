@@ -272,7 +272,90 @@ if(hasA && hasB && hasC){
         }
     }
 }
+else if (hasA && hasB){
+    std::cout << "A | B | Result " << std::endl;
+    for(int a = 0; a <= 1; a++){
+        for (int b = 0; b <= 1; b++){
+            int currentResult;
+            if(tokens[0] == "A") currentResult = a;
+            else currentResult = b;
 
+            for(int i = 1; i < tokens.size(); i++){
+                int operand;
+                if(tokens[i] == "AND"){
+                    if(tokens[i + 1] == "NOT"){
+                        if(tokens[i + 2] == "A") operand = NOT().getInverse(a);
+                        else operand = NOT().getInverse(b);
+                        currentResult = AND().getTruthTableValues(currentResult, operand);
+                        i += 2;
+                    } else {
+                        if(tokens[i + 1] == "A") operand = a;
+                        else operand = b;
+                        currentResult = AND().getTruthTableValues(currentResult, operand);
+                        i++;
+                    }
+                }
+                else if(tokens[i] == "OR"){
+                    if(tokens[i + 1] == "NOT"){
+                        if(tokens[i + 2] == "A") operand = NOT().getInverse(a);
+                        else operand = NOT().getInverse(b);
+                        currentResult = OR().getTruthTableValues(currentResult, operand);
+                        i += 2;
+                    } else {
+                        if(tokens[i + 1] == "A") operand = a;
+                        else operand = b;
+                        currentResult = OR().getTruthTableValues(currentResult, operand);
+                        i++;
+                    }
+                }
+                else if(tokens[i] == "NAND"){
+                    if(tokens[i + 1] == "NOT"){
+                        if(tokens[i + 2] == "A") operand = NOT().getInverse(a);
+                        else operand = NOT().getInverse(b);
+                        currentResult = NAND().getTruthTableValues(currentResult, operand);
+                        i += 2;
+                    } else {
+                        if(tokens[i + 1] == "A") operand = a;
+                        else operand = b;
+                        currentResult = NAND().getTruthTableValues(currentResult, operand);
+                        i++;
+                    }
+                }
+                else if(tokens[i] == "XOR"){
+                    if(tokens[i + 1] == "NOT"){
+                        if(tokens[i + 2] == "A") operand = NOT().getInverse(a);
+                        else operand = NOT().getInverse(b);
+                        currentResult = XOR().getTruthTableValues(currentResult, operand);
+                        i += 2;
+                    } else {
+                        if(tokens[i + 1] == "A") operand = a;
+                        else operand = b;
+                        currentResult = XOR().getTruthTableValues(currentResult, operand);
+                        i++;
+                    }
+                }
+                else if(tokens[i] == "NOR"){
+                    if(tokens[i + 1] == "NOT"){
+                        if(tokens[i + 2] == "A") operand = NOT().getInverse(a);
+                        else operand = NOT().getInverse(b);
+                        currentResult = NOR().getTruthTableValues(currentResult, operand);
+                        i += 2;
+                    } else {
+                        if(tokens[i + 1] == "A") operand = a;
+                        else operand = b;
+                        currentResult = NOR().getTruthTableValues(currentResult, operand);
+                        i++;
+                    }
+                }
+                else if(tokens[i] == "NOT"){
+                    if(tokens[i + 1] == "A") operand = a;
+                    else operand = b;
+                    currentResult = NOT().getInverse(operand);
+                    i++;
+                }
+            }
+            std::cout << a << " | " << b << " | " << currentResult << std::endl;
+        }
+    }
 }
-
-
+}
