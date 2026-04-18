@@ -111,14 +111,25 @@ if(hasA && hasB && hasC){
         for (int b = 0; b <= 1; b++){
             for(int c = 0; c <= 1; c++){
                 int currentResult; 
-                if(tokens[0] == "A"){
+                if(tokens[0] == "NOT"){
+                if(tokens[1] == "A"){
+                    currentResult = NOT().getInverse(a); 
+                }
+                else if(tokens[0] == "B"){
+                    currentResult = NOT().getInverse(b); 
+                }
+                else if(tokens[0] == "C"){
+                    currentResult = NOT().getInverse(c); 
+                }
+            }        
+                else if(tokens[0] == "A"){ 
                     currentResult = a; 
                 }
                 else if(tokens[0] == "B"){
                     currentResult = b; 
                 }
-                else if(tokens[0] == "C"){
-                    currentResult = c; 
+                else {
+                    currentResult = c;
                 }
                 for(int i = 1; i < tokens.size(); i++){
                     int operand;
@@ -288,8 +299,20 @@ else if (hasA && hasB){
     for(int a = 0; a <= 1; a++){
         for (int b = 0; b <= 1; b++){
             int currentResult;
-            if(tokens[0] == "A") currentResult = a;
-            else currentResult = b;
+                if(tokens[0] == "NOT"){
+                if(tokens[1] == "A"){
+                    currentResult = NOT().getInverse(a); 
+                }
+                else if(tokens[0] == "B"){
+                    currentResult = NOT().getInverse(b); 
+                }
+            }
+            else if(tokens[0] == "A"){ 
+                currentResult = a;
+            }
+            else {
+                currentResult = b;
+            }
 
             for(int i = 1; i < tokens.size(); i++){
                 int operand;
