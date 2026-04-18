@@ -112,72 +112,158 @@ if(hasA && hasB && hasC){
                 for(int i = 1; i < tokens.size(); i++){
                     int operand;
                     if(tokens[i] == "AND"){ 
+                       if(tokens[i + 1] == "NOT"){
+                            if(tokens[i + 2] == "A"){
+                                operand = NOT().getInverse(a); 
+                            }
+                            else if(tokens[i + 2] == "B"){
+                                operand = NOT().getInverse(b); 
+                            }
+                            else {
+                                operand = NOT().getInverse(c); 
+                            }
+                            currentResult = AND().getTruthTableValues(currentResult, operand);
+                            i ++; //for not operator not to ruin values of the next operator    
+                        } 
+                        else{
                         if(tokens[i + 1] == "A"){
                             operand = a; 
                         }
                         else if(tokens[i + 1] == "B"){
                             operand = b; 
                         }
-                        else if(tokens[i + 1] == "C"){
+                        else {
                             operand = c; 
                         }
                         currentResult = AND().getTruthTableValues(currentResult, operand);
                         i++;
                     }
+                    }
                     else if(tokens[i] == "OR"){
+                        if(tokens[i + 1] == "NOT"){
+                            if(tokens[i + 2] == "A"){
+                                operand = NOT().getInverse(a); 
+                            }
+                            else if(tokens[i + 2] == "B"){
+                                operand = NOT().getInverse(b); 
+                            }
+                            else {
+                                operand = NOT().getInverse(c); 
+                            }
+                            currentResult = OR().getTruthTableValues(currentResult, operand);
+                            i ++; //for not operator not to ruin values of the next operator    
+                        }
+                        else{
                         if(tokens[i + 1] == "A"){
                             operand = a; 
                         }
                         else if(tokens[i + 1] == "B"){
                             operand = b; 
                         }
-                        else if(tokens[i + 1] == "C"){
+                        else {
                             operand = c; 
                         }
                         currentResult = OR().getTruthTableValues(currentResult, operand);
                         i++;
                     }
+                    }
                     else if(tokens[i] == "NAND"){
+                        if(tokens[i + 1] == "NOT"){
+                            if(tokens[i + 2] == "A"){
+                                operand = NOT().getInverse(a); 
+                            }
+                            else if(tokens[i + 2] == "B"){
+                                operand = NOT().getInverse(b); 
+                            }
+                            else {
+                                operand = NOT().getInverse(c); 
+                            }
+                            currentResult = NAND().getTruthTableValues(currentResult, operand);
+                            i ++; //for not operator not to ruin values of the next operator    
+                        }
+                        else{
                         if(tokens[i + 1] == "A"){
                             operand = a; 
                         }
                         else if(tokens[i + 1] == "B"){
                             operand = b; 
                         }
-                        else if(tokens[i + 1] == "C"){
+                        else {
                             operand = c; 
                         }
                         currentResult = NAND().getTruthTableValues(currentResult, operand);
                         i++;
                     }
+                    }
                     else if(tokens[i] == "XOR"){
+                        if(tokens[i + 1] == "NOT"){
+                            if(tokens[i + 2] == "A"){
+                                operand = NOT().getInverse(a); 
+                            }
+                            else if(tokens[i + 2] == "B"){
+                                operand = NOT().getInverse(b); 
+                            }
+                            else {
+                                operand = NOT().getInverse(c); 
+                            }
+                            currentResult = XOR().getTruthTableValues(currentResult, operand);
+                            i ++; //for not operator not to ruin values of the next operator    
+                        }
+                        else{  
                         if(tokens[i + 1] == "A"){
                             operand = a; 
                         }
                         else if(tokens[i + 1] == "B"){
                             operand = b; 
                         }
-                        else if(tokens[i + 1] == "C"){
+                        else {
                             operand = c; 
                         }
                         currentResult = XOR().getTruthTableValues(currentResult, operand);
                         i++;
                     }
+                    }
                     else if(tokens[i] == "NOR"){
+                        if(tokens[i + 1] == "NOT"){
+                            if(tokens[i + 2] == "A"){
+                                operand = NOT().getInverse(a); 
+                            }
+                            else if(tokens[i + 2] == "B"){
+                                operand = NOT().getInverse(b); 
+                            }
+                            else {
+                                operand = NOT().getInverse(c); 
+                            }
+                            currentResult = NOR().getTruthTableValues(currentResult, operand);
+                            i ++; //for not operator not to ruin values of the next operator    
+                        }
+                        else{
                         if(tokens[i + 1] == "A"){
                             operand = a; 
                         }
                         else if(tokens[i + 1] == "B"){
                             operand = b; 
                         }
-                        else if(tokens[i + 1] == "C"){
+                        else {
                             operand = c; 
                         }
                         currentResult = NOR().getTruthTableValues(currentResult, operand);
                         i++;
                     }
+                    }
                     else if(tokens[i] == "NOT"){
-                        //dont know how to do NOT operator yet, have to somehow get it to store in another variable that then can be used 
+                        if(tokens[i + 1] == "A"){
+                            operand = a; 
+                        }
+                        else if(tokens[i + 1] == "B"){
+                            operand = b; 
+                        }
+                        else {
+                            operand = c; 
+                        }
+                        currentResult = NOT().getInverse(operand);
+                        i++;
+                    }
                 }
                 std::cout << "A: " << a << " B: " << b << " C: " << c << " Result: " << currentResult << std::endl;
             }
@@ -187,4 +273,4 @@ if(hasA && hasB && hasC){
 
 }
 
-}
+
