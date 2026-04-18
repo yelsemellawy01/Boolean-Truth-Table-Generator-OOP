@@ -94,8 +94,10 @@ if(NOT_Location != std::string::npos){
     std::cout << "NOT: Inverts the input." << std::endl;
         Operators notObj(6);
 }
+;
 
 if(hasA && hasB && hasC){
+    std::cout << " A | B | C | Result " << std::endl;
     for(int a = 0; a <= 1; a++){
         for (int b = 0; b <= 1; b++){
             for(int c = 0; c <= 1; c++){
@@ -265,7 +267,7 @@ if(hasA && hasB && hasC){
                         i++;
                     }
                 }
-                std::cout << "A: " << a << " B: " << b << " C: " << c << " Result: " << currentResult << std::endl;
+                std::cout << a << "  | " << b << " | " << c << " |  " << currentResult << std::endl;
             }
         }
     }
