@@ -1,6 +1,13 @@
+/*
+        Name: Youssuf Elsemellawy 
+        Date: 19/05/2024
+        Module Code: NTO1064 Object Oriented Programming
+        Assignment: NTO1064 Student Project: Boolean Expression & Truth Table Simulator (C++ OOP)
+*/
 #include <iostream> 
 #include <string> 
 #include <vector>
+#include <fstream>
 #include "AND.h"
 #include "OR.h"
 #include "NAND.h"
@@ -21,6 +28,7 @@ int pos;
 bool hasA = false;
 bool hasB = false;
 bool hasC = false;
+std::string output; //String to store the output of the truth table to be printed/stored in file after
 while ((pos = inputCopy.find(" ")) != std::string::npos) { //Tokenise the input string by finding the spaces in it and using them to separate the variables and operators in the input 
     tokens.push_back(inputCopy.substr(0, pos)); 
     inputCopy.erase(0, pos + 1); //Remove the tokenised part of the input string to find the next token in the next loop
@@ -97,7 +105,8 @@ if(NOT_Location != std::string::npos){
 ;
 
 if(hasA && hasB && hasC){
-    std::cout << " A | B | C | Result " << std::endl;
+    std::cout << "A | B | C | Result " << std::endl; 
+    output = "A | B | C | Result \n"; //String to store the output of the truth table to be printed to the user at the end of the program
     for(int a = 0; a <= 1; a++){
         for (int b = 0; b <= 1; b++){
             for(int c = 0; c <= 1; c++){
@@ -267,13 +276,15 @@ if(hasA && hasB && hasC){
                         i++;
                     }
                 }
-                std::cout << a << "  | " << b << " | " << c << " |  " << currentResult << std::endl;
+                output += std::to_string(a) + " | " + std::to_string(b) + " | " + std::to_string(c) + " | " + std::to_string(currentResult) + "\n"; //Add the current row of the truth table to output
+                std::cout << a << " | " << b << " | " << c << " | " << currentResult << std::endl; //Print the current row of the truth table to the user
             }
         }
     }
 }
 else if (hasA && hasB){
     std::cout << "A | B | Result " << std::endl;
+    output = "A | B | Result \n"; 
     for(int a = 0; a <= 1; a++){
         for (int b = 0; b <= 1; b++){
             int currentResult;
@@ -354,8 +365,23 @@ else if (hasA && hasB){
                     i++;
                 }
             }
+            output += std::to_string(a) + " | " + std::to_string(b) + " | " + std::to_string(currentResult) + "\n"; //Add the current row of the truth table to output
             std::cout << a << " | " << b << " | " << currentResult << std::endl;
         }
+    }
+}
+
+std::cout << "Do you want to save the truth table to a file? (Y/N)" << std::endl;
+char saveToFile;
+std::cin >> saveToFile;
+if(saveToFile == 'Y' || saveToFile == 'y'){
+    std::ofstream outFile("truth_table.txt");
+    if(outFile.is_open()){
+        outFile << output; //Write output to file
+        outFile.close();
+        std::cout << "Truth table saved to truth_table.txt" << std::endl;
+    } else {
+        std::cout << "Error opening file for writing." << std::endl;
     }
 }
 }
