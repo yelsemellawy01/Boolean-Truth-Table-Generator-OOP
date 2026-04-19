@@ -62,15 +62,15 @@ for(int i = 0; i < tokens.size(); i++){
 //Get index of the boolean ops in the string, if its not found, will return std::string npos and can cancel out easy
 int NAND_Location = input.find("NAND"); 
 if(NAND_Location != std::string::npos){ 
-    inputCopy.replace(NAND_Location, 4, ""); //Remove the nand operator from the input string to not overlap with the AND operator
+    input.replace(NAND_Location, 4, ""); //Remove the nand operator from the input string to not overlap with the AND operator
 }
 int XOR_Location = input.find("XOR"); 
 if(XOR_Location != std::string::npos){ 
-    inputCopy.replace(XOR_Location, 3, ""); //Remove the xor operator from the input string to not overlap with the OR operator 
+    input.replace(XOR_Location, 3, ""); //Remove the xor operator from the input string to not overlap with the OR operator 
 }
 int NOR_Location = input.find("NOR");
 if(NOR_Location != std::string::npos){ 
-    inputCopy.replace(NOR_Location, 3, ""); //Remove the nor operator from the input string to not overlap with the OR operator
+    input.replace(NOR_Location, 3, ""); //Remove the nor operator from the input string to not overlap with the OR operator
 }
 int NOT_Location = input.find("NOT");
 int AND_Location = input.find("AND"); 
